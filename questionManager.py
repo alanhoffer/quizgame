@@ -24,6 +24,14 @@ def selectRandomCharacters(word):
         raise TypeError('The variable that was passed is not a str or is to short')
 
 
+def getValidResponses(chars, dictionary):
+    valid_responses = []
 
-print(selectRandomCharacters("motivacion"))
+    for word in dictionary
+        if chars in word
+            valid_responses.append(word)
+
+    return valid_responses
+        
+
 

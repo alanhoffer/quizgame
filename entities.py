@@ -63,4 +63,11 @@ class Player():
             print(f'Error adding player {str(self.id)} to game {str(gameid)}')
 
         
+    def setLifes(self, quantity=1):
+        self.lifes -= quantity
+        return self.lifes
+
+    def getPoints(self):
+        return self.points
+
 

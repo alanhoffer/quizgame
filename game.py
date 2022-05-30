@@ -1,5 +1,6 @@
-from questionManager import selectRandomWord, selectRandomCharacters
+from questionManager import selectRandomWord, selectRandomCharacters, getValidResponses, loadDictionary
 
+dictionary = loadDictionary()
 
 
 def startGame(Game):
@@ -19,19 +20,19 @@ def startGame(Game):
         chars = selectRandomCharacters( selectRandomWord(dictionary) )
         
 
-        valid_responses = getValidResponses(chars)
+        valid_responses = getValidResponses(chars, dictionary)
 
-
-        
         response = input(f'Escribe una palabra que contenga {chars}: ')
 
         
         if response in valid_responses:
             player_in_turn.setPoint(1)
-            print(player_in_turn.getPoints())
+            print("Respuesta valida llevas Puntos: ",player_in_turn.getPoints())
 
         else:
             if player_in_turn.setLifes() == 0:
                 Game.setGameStatus('finished')
+                print("Perdiste maleta el juego termino.")
+            print("Respuesta incorrecta te quedan vidas: ", player_in_turn.getLifes())
             
-        i++
+        i = i + 1

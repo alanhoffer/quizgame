@@ -1,4 +1,5 @@
 import random
+import json
 
 def selectRandomWord(dictionary):
     if ( (type(dictionary) is list) and (len(dictionary) > 1) ):
@@ -27,11 +28,13 @@ def selectRandomCharacters(word):
 def getValidResponses(chars, dictionary):
     valid_responses = []
 
-    for word in dictionary
-        if chars in word
+    for word in dictionary:
+        if chars in word:
             valid_responses.append(word)
 
     return valid_responses
-        
 
-
+def loadDictionary():
+    with open('./static/dictionary_es.json') as json_data:
+        DICTIONARY = json.load(json_data)
+        return DICTIONARY

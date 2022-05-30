@@ -31,7 +31,7 @@ class Game():
 
 
 class Player():
-    def __init__(self, id=0, name="", gameid=0, points=0, lifes,  status=""):
+    def __init__(self, id=0, name="", gameid=0, points=0, lifes=0,  status=""):
         self.id = id
         self.name = name
         self.gameid = gameid
@@ -59,15 +59,21 @@ class Player():
     def setGameid(self, gameid):
         try:
             self.gameid = gameid
-        except
+        except:
             print(f'Error adding player {str(self.id)} to game {str(gameid)}')
 
-        
+    
     def setLifes(self, quantity=1):
         self.lifes -= quantity
         return self.lifes
 
     def getPoints(self):
         return self.points
+
+    
+    def getLifes(self):
+        return self.lifes
+
+
 
 
